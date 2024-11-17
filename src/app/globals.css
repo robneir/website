@@ -1,0 +1,43 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: #f8f3ee;
+    --foreground: #171717;
+    --hover-background: #f0e9e2;
+    --hover-foreground: #000000;
+    --text-hover: #7a7a7a;
+    --secondary-background: #f8f8f8;
+  }
+
+  :root.dark {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+    --hover-background: #171717;
+    --hover-foreground: #ffffff;
+    --text-hover: #a3a3a3;
+    --secondary-background: #464646;
+  }
+
+  body {
+    @apply text-foreground bg-background text-base;
+  }
+
+  * {
+    @apply text-base;
+  }
+
+  h1 {
+    @apply text-5xl;
+  }
+
+  h2 {
+    @apply text-4xl;
+  }
+
+  h3 {
+    @apply text-3xl;
+  }
+}
