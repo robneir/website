@@ -8,7 +8,7 @@ import PageHeader from '@/components/PageHeader'
 import TableOfContents from '@/components/TableOfContents'
 
 export const metadata = {
-  title: 'All links | Robert',
+  title: 'All Links | neir.me',
   description: 'A collection of insightful videos, essays, and quotes.',
 }
 
