@@ -68,7 +68,7 @@ export default function HomePage() {
     <main className="flex-1 py-6">
       <PageHeader 
         title="Curated Links"
-        description="All newest links added to the website: Timeless and useful articles, videos, essays, quotes."
+        description="Select high quality videos, essays, articles, and rhetoric online. Topics: Tech, economics, politics, USA, investing, VC, startups, entrepreneurship."
       />
 
       <div className="flex relative gap-8">

@@ -28,7 +28,7 @@ export default function AllLinksPage() {
     <main className="flex-1 py-6">
       <PageHeader
         title="All Links"
-        description="All links ever added to the website in order: Timeless and useful articles, videos, essays, quotes."
+        description="All links ever added to the website in order: high quality & useful articles, videos, essays, quotes."
       />
 
       <div className="flex relative gap-8">
