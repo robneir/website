@@ -8,6 +8,11 @@ import TableOfContents from '@/components/TableOfContents'
 import H2 from '@/components/H2'
 import PageHeader from '@/components/PageHeader'
 
+export const metadata = {
+  title: 'neir.me',
+  description: 'Select high quality videos, essays, articles, and rhetoric online. Topics: Tech, economics, politics, USA, investing, VC, startups, entrepreneurship.',
+}
+
 export default function HomePage() {
   const sortedEssays = essays.sort((a, b) => {
     const dateA = a.date.split('/').reverse().join('')
