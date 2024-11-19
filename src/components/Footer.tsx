@@ -12,22 +12,6 @@ export default function Footer() {
       </div>
       <div className="px-4 py-6">
         <div className="flex justify-center gap-6">
-          <TTLink 
-            href="https://twitter.com/neir_rob"
-            text="Twitter"
-            className="flex items-center gap-1"
-          >
-            Twitter
-            <span className="text-sm">→</span>
-          </TTLink>
-          <TTLink
-            href="https://riotiq.com"
-            text="Current Project" 
-            className="flex items-center gap-1"
-          >
-            Current Project
-            <span className="text-sm">→</span>
-          </TTLink>
         </div>
       </div>
     </footer>

@@ -72,7 +72,7 @@ export default function HomePage() {
       />
 
       <div className="flex relative gap-8">
-        <div className="relative w-64">
+        <div className="relative w-64 hidden lg:block">
           <div className="sticky top-24">
             <TableOfContents />
           </div>

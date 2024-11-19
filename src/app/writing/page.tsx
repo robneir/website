@@ -23,11 +23,7 @@ export default function WritingPage() {
       />
 
       <div className="flex relative gap-8">
-        <div className="relative w-64">
-          <div className="sticky top-24">
-            <TableOfContents />
-          </div>
-        </div>
+        <TableOfContents />
 
         <div className="flex-1">
           {sortedEssays.map((essay) => (

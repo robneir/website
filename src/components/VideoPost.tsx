@@ -31,15 +31,15 @@ export default function VideoPost({
       target="_blank"
       rel="noopener noreferrer"
       toc-marker={title}
-      className="block group my-8 hover:bg-[var(--hover-background)] rounded-lg transition-colors"
+      className="block group my-4 sm:my-8 hover:bg-[var(--hover-background)] rounded-lg transition-colors"
     >
-      <div className="flex gap-6 p-4">
+      <div className="flex flex-col sm:flex-row gap-3 sm:gap-6 p-3 sm:p-4">
         {/* Thumbnail */}
-        <div className="relative flex-shrink-0">
+        <div className="relative w-full sm:w-48">
           <img 
             src={thumbnailUrl} 
             alt={title}
-            className="w-48 h-32 object-cover rounded-md"
+            className="w-full h-48 sm:h-32 object-cover rounded-md"
           />
           <div className="absolute bottom-2 right-2 bg-black/75 text-white text-xs px-2 py-1 rounded">
             {duration}
@@ -58,10 +58,10 @@ export default function VideoPost({
 
         {/* Content */}
         <div className="flex-1">
-          <h3 className="font-medium text-lg mb-2 group-hover:text-[var(--hover-foreground)] transition-colors">
+          <h3 className="font-medium text-base sm:text-lg mb-2 group-hover:text-[var(--hover-foreground)] transition-colors">
             {title}
           </h3>
-          <p className="text-sm text-[var(--text-hover)] mb-2 line-clamp-2">
+          <p className="text-xs sm:text-sm text-[var(--text-hover)] mb-2 line-clamp-2">
             {description}
           </p>
           <div className="text-xs text-[var(--text-hover)]">

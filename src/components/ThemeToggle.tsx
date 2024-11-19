@@ -3,12 +3,11 @@ import { useState, useEffect } from 'react'
 import { SunIcon, MoonIcon } from '@heroicons/react/24/outline'
 
 export default function ThemeToggle() {
-  const [theme, setTheme] = useState('light')
+  const [theme, setTheme] = useState('dark')
 
   useEffect(() => {
-    // Get initial theme from localStorage or system preference
-    const savedTheme = localStorage.getItem('theme') || 
-      (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light')
+    // Get theme from localStorage or default to dark
+    const savedTheme = localStorage.getItem('theme') || 'dark'
     setTheme(savedTheme)
     document.documentElement.classList.toggle('dark', savedTheme === 'dark')
   }, [])

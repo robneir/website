@@ -112,7 +112,7 @@ export default function TableOfContents() {
   }, [])
 
   return (
-    <nav className="sticky top-24 w-64 hidden xl:block">
+    <nav className="sticky top-24 w-64 hidden lg:block">
       <div className="p-4">
         <div className="flex justify-between items-center">
           <button
