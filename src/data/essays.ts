@@ -22,7 +22,7 @@ export const essays: Essay[] = [
     authorLink: "https://thecreativeindependent.com"
   },
   {
-    title: "How to do things if you're no that smart and don't have any talent",
+    title: "How to do things if you're not that smart and don't have any talent",
     url: "https://adaobi.substack.com/p/how-to-do-things-if-youre-not-that",
     date: "01/28/2024",
     author: "Adaobi",
