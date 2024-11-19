@@ -20,7 +20,6 @@ export default function TableOfContents() {
   // Get all headings when the component mounts or route changes
   useEffect(() => {
     const elements = Array.from(document.querySelectorAll('[toc-marker]'))
-    let currentParentId: string | undefined
     
     const items: TOCItem[] = elements.map((element, index) => {
       const id = element.id || 
@@ -28,16 +27,10 @@ export default function TableOfContents() {
                 `heading-${index}`
       const level = element.tagName === 'H2' ? 2 : 3
       
-      // Update parent ID when encountering h2
-      if (level === 2) {
-        currentParentId = id
-      }
-      
       return {
         id,
         text: element.getAttribute('toc-marker') || '',
         level,
-        parentId: level === 3 ? currentParentId : undefined
       }
     })
 
@@ -120,17 +113,17 @@ export default function TableOfContents() {
 
   return (
     <nav className="sticky top-24 w-64 hidden xl:block">
-      <div className="border border-gray-200 p-4">
+      <div className="p-4">
         <div className="flex justify-between items-center">
           <button
             onClick={() => setIsExpanded(!isExpanded)}
             className="flex justify-between items-center w-full group cursor-pointer"
             aria-label={isExpanded ? "Collapse contents" : "Expand contents"}
           >
-            <div className="text-2xl font-medium font-assistant text-gray-500 group-hover:text-[var(--foreground)] transition-colors truncate">
+            <div className="text-2xl font-medium font-assistant text-foreground group-hover:text-[var(--foreground)] transition-colors truncate">
               Page Contents
             </div>
-            <div className="text-gray-500 group-hover:text-[var(--foreground)] transition-colors">
+            <div className="text-foreground group-hover:text-[var(--foreground)] transition-colors">
               {isExpanded ? (
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                   <path d="M18 15l-6-6-6 6"/>
@@ -145,39 +138,18 @@ export default function TableOfContents() {
         </div>
         {isExpanded && (
           <ul className="space-y-1 mt-4">
-            {headings.filter(h => h.level === 2).map((heading, index) => {
+            {headings.map((heading, index) => {
               const truncatedText = heading.text.length > 27 ? heading.text.slice(0, 27) + '...' : heading.text
-              const childHeadings = headings.filter(h => h.parentId === heading.id)
               
               return (
                 <li key={`${heading.id}-${index}`}>
-                  <div>
-                    <button
-                      data-toc-id={heading.id}
-                      onClick={() => scrollToHeading(heading.id)}
-                      className={`text-base hover:text-[var(--foreground)] transition-colors block py-0.5 text-left w-full font-assistant truncate text-lg font-bold text-gray-500 ${selectedId === heading.id ? 'bg-[var(--hover-background)]' : ''}`}
-                    >
-                      {truncatedText}
-                    </button>
-                  </div>
-                  {childHeadings.length > 0 && (
-                    <ul className="ml-4 space-y-1 mt-1">
-                      {childHeadings.map((child, childIndex) => {
-                        const childTruncatedText = child.text.length > 27 ? child.text.slice(0, 27) + '...' : child.text
-                        return (
-                          <li key={`${child.id}-${childIndex}`}>
-                            <button
-                              data-toc-id={child.id}
-                              onClick={() => scrollToHeading(child.id)}
-                              className={`text-base hover:text-[var(--foreground)] transition-colors block py-0.5 text-left w-full font-assistant truncate text-gray-500 ${selectedId === child.id ? 'bg-[var(--hover-background)]' : ''}`}
-                            >
-                              {childTruncatedText}
-                            </button>
-                          </li>
-                        )
-                      })}
-                    </ul>
-                  )}
+                  <button
+                    data-toc-id={heading.id}
+                    onClick={() => scrollToHeading(heading.id)}
+                    className={`text-base hover:text-[var(--foreground)] transition-colors block py-0.5 text-left w-full font-assistant truncate ${heading.level === 2 ? 'text-lg font-bold' : ''} text-foreground ${selectedId === heading.id ? 'bg-[var(--hover-background)]' : ''} ${heading.level === 3 ? 'ml-4' : ''}`}
+                  >
+                    {truncatedText}
+                  </button>
                 </li>
               )
             })}

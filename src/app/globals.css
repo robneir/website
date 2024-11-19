@@ -13,12 +13,12 @@
   }
 
   :root.dark {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #161616;
+    --foreground: #cacaca;
     --hover-background: #171717;
     --hover-foreground: #ffffff;
     --text-hover: #a3a3a3;
-    --secondary-background: #464646;
+    --secondary-background: #161616;
   }
 
   body {

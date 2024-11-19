@@ -15,12 +15,12 @@ export default function EssayPost({ title, url, date, author, authorLink }: Essa
 
   return (
     <div className="p-4 text-foreground hover:text-[--hover-foreground] transition-colors flex items-center justify-between group w-full">
-      <TTLink 
-        href={url}
-        text={title}
-        className="flex items-center justify-between w-full"
-      >
-        <div className="flex items-center gap-2">
+      <div className="flex items-center justify-between w-full">
+        <TTLink 
+          href={url}
+          text={title}
+          className="flex items-center gap-2"
+        >
           <span className="text-lg" toc-marker={title}>{truncatedTitle}</span>
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -37,14 +37,14 @@ export default function EssayPost({ title, url, date, author, authorLink }: Essa
             <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" />
             <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" />
           </svg>
-        </div>
+        </TTLink>
         <div className="flex items-center gap-4">
-          {!authorLink && <span className="text-sm text-gray-500">{author}</span>}
+          {!authorLink && <span className="text-sm text-gray-500 whitespace-nowrap">{author}</span>}
         </div>
-      </TTLink>
+      </div>
       <div className="flex items-center gap-4 justify-end">
         {authorLink && (
-          <TTLink href={authorLink} text={author} className="text-sm text-gray-500 hover:underline">
+          <TTLink href={authorLink} text={author} className="text-sm text-gray-500 hover:underline whitespace-nowrap">
             {author}
           </TTLink>
         )}

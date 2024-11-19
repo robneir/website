@@ -2,7 +2,7 @@ import TTLink from './TTLink'
 
 export default function Footer() {
   return (
-    <footer className="fixed bottom-0 left-1/2 -translate-x-1/2 max-w-4xl w-full bg-background">
+    <footer className="max-w-4xl w-full mx-auto bg-background mt-12">
       <div className="relative">
         <div className="border-t border-[var(--border)]"></div>
         <div className="border-t border-[var(--border)] mt-[3px]"></div>

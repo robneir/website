@@ -13,7 +13,7 @@ export default {
         foreground: "var(--foreground)",
       },
       fontFamily: {
-        assistant: ['Assistant', 'system-ui', 'sans-serif'],
+        sans: ['Newsreader', 'Georgia', 'serif'],
         newsreader: ['Newsreader', 'Georgia', 'serif'],
       },
     },
