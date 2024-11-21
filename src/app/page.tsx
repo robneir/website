@@ -3,10 +3,11 @@ import { essays } from '@/data/essays'
 import QuotePost from '@/components/QuotePost'
 import VideoPost from '@/components/VideoPost'
 import { quotes } from '@/data/quotes'
-import { dataAdded as videos } from '@/data/videos'
-import TableOfContents from '@/components/TableOfContents'
+import { dataAdded as videos, Video } from '@/data/videos'
 import H2 from '@/components/H2'
 import PageHeader from '@/components/PageHeader'
+import { Essay } from '@/data/essays'
+import { Quote } from '@/data/quotes'
 
 export const metadata = {
   title: 'neir.me',
@@ -22,42 +23,11 @@ export default function HomePage() {
 
   const newestEssay = sortedEssays[0]
 
-  type VideoItem = {
-    type: 'video';
-    title: string;
-    description: string;
-    videoUrl: string;
-    duration: string;
-    platform: 'youtube' | 'vimeo' | 'other';
-    date: string;
-    featured: boolean;
-  }
-
-  type EssayItem = {
-    type: 'essay';
-    title: string;
-    url: string;
-    date: string;
-    author: string;
-    authorLink: string;
-    featured: boolean;
-  }
-
-  type QuoteItem = {
-    type: 'quote';
-    quote?: string;
-    quotes?: string[];
-    author?: string;
-    source?: string;
-    date: string;
-    featured: boolean;
-  }
-
-  type ContentItem = VideoItem | EssayItem | QuoteItem;
+  type ContentItem = (Video & { type: 'video' }) | (Essay & { type: 'essay' }) | (Quote & { type: 'quote' });
 
   // Combine and sort all content
   const allContent: ContentItem[] = [
-    ...videos.map(item => ({ ...item, type: 'video' as const, platform: item.platform as 'youtube' | 'vimeo' | 'other' })),
+    ...videos.map(item => ({ ...item, type: 'video' as const })),
     ...essays.map(item => ({ ...item, type: 'essay' as const })),
     ...quotes.map(item => ({ ...item, type: 'quote' as const, date: item.date || '01/01/1970' }))
   ].sort((a, b) => {
@@ -80,112 +50,73 @@ export default function HomePage() {
         description="Select high quality videos, essays, articles, and rhetoric online. Topics: Tech, economics, politics, USA, investing, VC, startups, entrepreneurship."
       />
 
-      <div className="flex relative gap-8">
-        <div className="relative w-64 hidden lg:block">
-          <div className="sticky top-24">
-            <TableOfContents />
+      <div className="flex-1">
+        <H2 id="featured">Featured</H2>
+        {featuredContent.map((item, index) => (
+          <div key={index}>
+            {item.type === 'video' && (
+              <VideoPost 
+                {...item}
+              />
+            )}
+            {item.type === 'essay' && (
+              <EssayPost 
+                {...item}
+              />
+            )}
+            {item.type === 'quote' && (
+              <QuotePost
+                {...item}
+              />
+            )}
           </div>
+        ))}
+
+        <div className="py-8">
+          <H2 id="newest">Newest</H2>
+          {newestItem.type === 'video' && (
+            <VideoPost 
+              {...newestItem}
+            />
+          )}
+          {newestItem.type === 'essay' && (
+            <EssayPost 
+              {...newestItem}
+            />
+          )}
+          {newestItem.type === 'quote' && (
+            <QuotePost
+              {...newestItem}
+            />
+          )}
         </div>
 
-        <div className="flex-1">
-          <H2 id="featured">Featured</H2>
-          {featuredContent.map((item, index) => (
-            <div key={index}>
-              {item.type === 'video' && (
-                <VideoPost 
-                  title={item.title}
-                  description={item.description}
-                  videoUrl={item.videoUrl}
-                  duration={item.duration}
-                  platform={item.platform}
-                  date={item.date}
-                />
-              )}
-              {item.type === 'essay' && (
-                <EssayPost 
-                  title={item.title}
-                  url={item.url}
-                  date={item.date}
-                  author={item.author}
-                  authorLink={item.authorLink}
-                />
-              )}
-              {item.type === 'quote' && (
-                <QuotePost
-                  quote={item.quotes || item.quote || ''}
-                  author={item.author}
-                  source={item.source}
-                  date={item.date}
-                />
-              )}
-            </div>
+        <div className="py-8">
+          <H2 id="all-essays">Writing</H2>
+          {sortedEssays.slice(0, 3).map((essay) => (
+            <EssayPost key={essay.url} {...essay} />
           ))}
+        </div>
+        
+        <div className="py-8">
+          <H2 id="videos">Pods & Vids</H2>
+          {videos.slice(0, 3).map((video) => (
+            <VideoPost 
+              key={video.videoUrl}
+              {...video}
+              platform={video.platform as 'youtube' | 'vimeo' | 'other'}
+            />
+          ))}
+        </div>
 
-          <div className="py-8">
-            <H2 id="newest">Newest</H2>
-            {newestItem.type === 'video' && (
-              <VideoPost 
-                title={newestItem.title}
-                description={newestItem.description}
-                videoUrl={newestItem.videoUrl}
-                duration={newestItem.duration}
-                platform={newestItem.platform}
-                date={newestItem.date}
-              />
-            )}
-            {newestItem.type === 'essay' && (
-              <EssayPost 
-                title={newestItem.title}
-                url={newestItem.url}
-                date={newestItem.date}
-                author={newestItem.author}
-                authorLink={newestItem.authorLink}
-              />
-            )}
-            {newestItem.type === 'quote' && (
-              <QuotePost
-                quote={newestItem.quotes || newestItem.quote || ''}
-                author={newestItem.author}
-                source={newestItem.source}
-                date={newestItem.date}
-              />
-            )}
-          </div>
-
-          <div className="py-8">
-            <H2 id="all-essays">Newest Writing</H2>
-            {sortedEssays.slice(0, 3).map((essay) => (
-              <EssayPost key={essay.url} {...essay} />
-            ))}
-          </div>
-          
-          <div className="py-8">
-            <H2 id="videos">Newest Videos</H2>
-            {videos.slice(0, 3).map((video) => (
-              <VideoPost 
-                key={video.videoUrl}
-                title={video.title}
-                description={video.description}
-                videoUrl={video.videoUrl}
-                duration={video.duration}
-                platform={video.platform as 'youtube' | 'vimeo' | 'other'}
-                date={video.date}
-              />
-            ))}
-          </div>
-
-          <div className="py-8">
-            <H2 id="quotes">Newest Quotes</H2>
-            {quotes.slice(0, 3).map((quoteItem, index) => (
-              <QuotePost 
-                key={index}
-                quote={quoteItem.quotes || quoteItem.quote || ''} 
-                author={quoteItem.author}
-                source={quoteItem.source || ''}
-                date={quoteItem.date}
-              />
-            ))}
-          </div>
+        <div className="py-8">
+          <H2 id="quotes">Quotes</H2>
+          {quotes.slice(0, 3).map((quote, index) => (
+            <QuotePost 
+              key={index}
+              {...quote}
+            />
+          ))}
         </div>
       </div>
     </main>

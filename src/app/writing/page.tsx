@@ -1,7 +1,6 @@
 import { essays } from '@/data/essays'
 import EssayPost from '@/components/EssayPost'
 import PageHeader from '@/components/PageHeader'
-import TableOfContents from '@/components/TableOfContents'
 
 export const metadata = {
   title: 'Writing | neir.me',
@@ -22,14 +21,10 @@ export default function WritingPage() {
         description="Timeless essays & articles, with some of my own less timeless writing sprinkled in."
       />
 
-      <div className="flex relative gap-8">
-        <TableOfContents />
-
-        <div className="flex-1">
-          {sortedEssays.map((essay) => (
-            <EssayPost key={essay.url} {...essay} />
-          ))}
-        </div>
+      <div className="flex-1">
+        {sortedEssays.map((essay) => (
+          <EssayPost key={essay.url} {...essay} />
+        ))}
       </div>
     </main>
   )

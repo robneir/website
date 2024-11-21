@@ -55,7 +55,7 @@ export const dataAdded: Video[] = [
     featured: false
   },
   {
-    title: "Super Quick Crash Courses on U.S. Government and Politics",
+    title: "Youtube Playlist - Crash Courses on U.S. Government and Politics",
     description: "Everyone should watch these if they don't have a basic understanding of US gov/politics. In 50 videos, Craig Benzine (aka WeezyWaiter) teaches you U.S. government and politics! The course is based on the 2014 AP U.S. Government and Politics curriculum. By the end of this learning playlist, you will be able to: Become a more engaged and active citizen, understand how the US government works and how you can make it better for you and your community, explain the differences between the three branches of government, describe how political ideology, parties, and media influence elections and public policy, and identify the limitations of democracy and the U.S. political system.",
     videoUrl: "https://www.youtube.com/playlist?list=PL8dPuuaLjXtOfse2ncvffeelTrqvhrz8H",
     duration: "50 videos",

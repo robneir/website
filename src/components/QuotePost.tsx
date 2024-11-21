@@ -1,14 +1,7 @@
-interface QuotePostProps {
-  quote?: string | string[]
-  quotes?: string[]
-  author?: string
-  source?: string
-  date: string
-  authorLink?: string
-}
+import { Quote } from '@/data/quotes'
 
-export default function QuotePost({ quote, quotes: propQuotes, author, source, date, authorLink }: QuotePostProps) {
-  const allQuotes = propQuotes || (Array.isArray(quote) ? quote : [quote || ''])
+export default function QuotePost({ quote, author, source, sourceLink, date, authorLink }: Quote) {
+  const allQuotes = Array.isArray(quote) ? quote : [quote || '']
 
   return (
     <div className="p-4 text-foreground flex flex-col sm:flex-row items-start sm:items-center justify-between group w-full gap-4">
@@ -27,12 +20,24 @@ export default function QuotePost({ quote, quotes: propQuotes, author, source, d
         </div>
       </div>
       <div className="flex items-center gap-4 text-xs text-gray-500 mt-2 sm:mt-0 flex-shrink-0 self-end sm:self-auto">
-        {authorLink ? (
-          <a href={authorLink} className="hover:text-[--hover-foreground] transition-colors">{author}</a>
-        ) : (
-          author && <span>{author}</span>
+        {author && (
+          <>
+            {authorLink ? (
+              <a href={authorLink} className="hover:text-[--hover-foreground] transition-colors">{author}</a>
+            ) : (
+              <span>{author}</span>
+            )}
+          </>
         )}
-        {source && <span>{source}</span>}
+        {source && (
+          <>
+            {sourceLink ? (
+              <a href={sourceLink} className="hover:text-[--hover-foreground] transition-colors">{source}</a>
+            ) : (
+              <span>{source}</span>
+            )}
+          </>
+        )}
         <span>{date}</span>
       </div>
     </div>

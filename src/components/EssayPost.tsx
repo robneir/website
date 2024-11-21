@@ -1,16 +1,9 @@
 'use client'
 
 import TTLink from './TTLink'
+import { Essay } from '@/data/essays'
 
-interface EssayPostProps {
-  title: string
-  url: string
-  date: string
-  author: string
-  authorLink?: string
-}
-
-export default function EssayPost({ title, url, date, author, authorLink }: EssayPostProps) {
+export default function EssayPost({ title, url, date, author, authorLink, featured }: Essay) {
   return (
     <div className="p-4 text-foreground flex flex-col sm:flex-row items-start sm:items-center justify-between group w-full gap-4">
       <div className="flex items-start gap-2 flex-1">

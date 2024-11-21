@@ -17,17 +17,7 @@ export default function NavBar() {
               neir.me
             </Link>
             
-            <div className="flex items-center gap-6">
-              <Link href="https://twitter.com/your_handle" target="_blank" rel="noopener noreferrer" className="hover:text-gray-600 transition-colors flex items-center gap-1">
-                X
-                <span className="text-sm">↗</span>
-              </Link>
-              <Link href="https://riotiq.com/" className="hover:text-gray-600 transition-colors flex items-center gap-1">
-                Current Project
-                <span className="text-sm">↗</span>
-              </Link>
-              <ThemeToggle />
-            </div>
+            <ThemeToggle />
           </div>
 
           <div className="flex items-center justify-center gap-6 mt-2">
@@ -39,6 +29,12 @@ export default function NavBar() {
             </Link>
             <Link href="/writing" className="text-lg hover:text-gray-600 transition-colors">
               — Writing —
+            </Link>
+            <Link href="https://twitter.com/your_handle" target="_blank" rel="noopener noreferrer" className="text-lg hover:text-gray-600 transition-colors flex items-center gap-1">
+              X ↗
+            </Link>
+            <Link href="https://riotiq.com/" className="text-lg hover:text-gray-600 transition-colors flex items-center gap-1">
+              Riot IQ ↗
             </Link>
           </div>
         </div>
@@ -90,7 +86,7 @@ export default function NavBar() {
                 <span className="text-sm">↗</span>
               </Link>
               <Link href="https://riotiq.com/" className="hover:text-gray-600 transition-colors flex items-center gap-1">
-                Current Project
+                Riot IQ
                 <span className="text-sm">↗</span>
               </Link>
             </div>

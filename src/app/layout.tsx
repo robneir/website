@@ -18,7 +18,7 @@ export default function RootLayout({
       <ThemeProvider>
         <body className="min-h-screen">
           <NavBar />
-          <div className="max-w-6xl mx-auto px-4">
+          <div className="max-w-4xl mx-auto px-4">
             <main className="py-12">
               {children}
             </main>
