@@ -120,8 +120,6 @@ export default function HomePage() {
 
           <div className="py-8">
             <H2 id="all-essays">Newest Writing</H2>
-          </div>
-          <div>
             {sortedEssays.slice(0, 3).map((essay) => (
               <EssayPost key={essay.url} {...essay} />
             ))}

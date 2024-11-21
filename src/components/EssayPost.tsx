@@ -1,7 +1,7 @@
 'use client'
 
 import TTLink from './TTLink'
-import { useEffect, useState } from 'react'
+import { useEffect, useRef } from 'react'
 
 interface EssayPostProps {
   title: string
@@ -12,70 +12,86 @@ interface EssayPostProps {
 }
 
 export default function EssayPost({ title, url, date, author, authorLink }: EssayPostProps) {
-  const [isMobile, setIsMobile] = useState(false)
-  const truncatedTitle = title.length > (isMobile ? 30 : 50) ? title.slice(0, isMobile ? 30 : 50) + '...' : title
+  const titleRef = useRef<HTMLSpanElement>(null)
 
   useEffect(() => {
-    const checkIfMobile = () => {
-      setIsMobile(window.innerWidth < 768)
+    const checkTitleOverflow = () => {
+      const titleElement = titleRef.current
+      if (!titleElement) return
+
+      const isOverflowing = titleElement.scrollWidth > titleElement.clientWidth
+      if (isOverflowing) {
+        const containerWidth = titleElement.clientWidth
+        const tempSpan = document.createElement('span')
+        tempSpan.style.visibility = 'hidden'
+        tempSpan.style.whiteSpace = 'nowrap'
+        tempSpan.style.position = 'absolute'
+        document.body.appendChild(tempSpan)
+
+        let start = 0
+        let end = title.length
+        let result = title
+
+        while (start <= end) {
+          const mid = Math.floor((start + end) / 2)
+          tempSpan.textContent = title.slice(0, mid) + '...'
+          
+          if (tempSpan.offsetWidth <= containerWidth) {
+            result = title.slice(0, mid) + '...'
+            start = mid + 1
+          } else {
+            end = mid - 1
+          }
+        }
+
+        titleElement.textContent = result
+        document.body.removeChild(tempSpan)
+      }
     }
 
-    checkIfMobile()
-    window.addEventListener('resize', checkIfMobile)
-    return () => window.removeEventListener('resize', checkIfMobile)
-  }, [])
+    checkTitleOverflow()
+    window.addEventListener('resize', checkTitleOverflow)
+    return () => window.removeEventListener('resize', checkTitleOverflow)
+  }, [title])
 
   return (
-    <div className="p-4 text-foreground hover:text-[--hover-foreground] transition-colors flex flex-col md:flex-row md:items-center justify-between group w-full gap-2">
-      <div className="flex flex-col md:flex-row md:items-center justify-between w-full gap-2 md:gap-4">
-        <TTLink 
-          href={url}
-          text={title}
-          className="flex items-center gap-2"
-        >
-          <span className="text-base md:text-lg" toc-marker={title}>{truncatedTitle}</span>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="14"
-            height="14"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            className="text-gray-400 md:w-4 md:h-4"
-          >
-            <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" />
-            <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" />
-          </svg>
-        </TTLink>
-        <div className="flex items-center gap-2 md:gap-4">
-          {!authorLink && <span className="text-xs md:text-sm text-gray-500 whitespace-nowrap">{author}</span>}
-        </div>
-      </div>
-      <div className="flex items-center gap-2 md:gap-4 justify-start md:justify-end">
-        {authorLink && (
-          <TTLink href={authorLink} text={author} className="text-xs md:text-sm text-gray-500 hover:underline whitespace-nowrap">
-            {author}
-          </TTLink>
-        )}
-        <span className="text-xs md:text-sm text-gray-500">{date}</span>
+    <div className="p-4 text-foreground flex items-center justify-between group w-full gap-4">
+      <div className="flex items-center gap-2 flex-1">
         <svg 
-          xmlns="http://www.w3.org/2000/svg" 
-          width="16" 
-          height="16" 
+          className="w-5 h-5 text-[var(--text-hover)] opacity-50" 
           viewBox="0 0 24 24" 
           fill="none" 
           stroke="currentColor" 
-          strokeWidth="2" 
-          strokeLinecap="round" 
-          strokeLinejoin="round"
-          className="group-hover:translate-x-1 transition-transform md:w-[18px] md:h-[18px]"
+          strokeWidth="1.5"
         >
-          <path d="M5 12h14"/>
-          <path d="m12 5 7 7-7 7"/>
+          <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+          <path d="M14 2v6h6" />
+          <path d="M16 13H8" />
+          <path d="M16 17H8" />
+          <path d="M10 9H8" />
         </svg>
+        <TTLink 
+          href={url} 
+          text={title}
+          className="hover:text-[--hover-foreground] transition-colors"
+        >
+          <span 
+            ref={titleRef}
+            className="text-base md:text-lg truncate"
+            toc-marker={title}
+            style={{ maxWidth: '100%', whiteSpace: 'nowrap', overflow: 'hidden' }}
+          >
+            {title}
+          </span>
+        </TTLink>
+      </div>
+      <div className="flex items-center gap-4 text-xs text-gray-500">
+        {authorLink ? (
+          <a href={authorLink} className="hover:text-[--hover-foreground] transition-colors">{author}</a>
+        ) : (
+          <span>{author}</span>
+        )}
+        <span>{date}</span>
       </div>
     </div>
   )
