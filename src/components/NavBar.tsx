@@ -30,7 +30,7 @@ export default function NavBar() {
             <Link href="/writing" className="text-lg hover:text-gray-600 transition-colors">
               — Writing —
             </Link>
-            <Link href="https://twitter.com/your_handle" target="_blank" rel="noopener noreferrer" className="text-lg hover:text-gray-600 transition-colors flex items-center gap-1">
+            <Link href="https://x.com/neir_rob" target="_blank" rel="noopener noreferrer" className="text-lg hover:text-gray-600 transition-colors flex items-center gap-1">
               X ↗
             </Link>
             <Link href="https://riotiq.com/" className="text-lg hover:text-gray-600 transition-colors flex items-center gap-1">
