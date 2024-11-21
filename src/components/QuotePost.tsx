@@ -14,19 +14,19 @@ export default function QuotePost({ quote, quotes: propQuotes, author, source, d
 
   return (
     <div 
-      className={`${hasAttribution ? 'my-8 px-6 py-8' : 'my-4 px-4 py-4'} rounded-lg ${isMultipleQuotes ? 'border border-dotted border-foreground' : ''}`}
+      className={`${hasAttribution ? 'my-4 px-4 py-6' : 'my-2 px-2 py-3'} rounded-lg ${isMultipleQuotes ? 'border border-dotted border-foreground' : ''}`}
     >
-      <div className="flex flex-col gap-4">
-        <div className="flex items-center justify-between gap-4">
+      <div className="flex flex-col gap-2">
+        <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2 sm:gap-4">
           <div className="flex-1">
             <blockquote className="relative">
               {/* Decorative quote mark */}
-              <span className="absolute -top-4 -left-4 text-4xl text-[var(--text-hover)] font-serif">"</span>
+              <span className="absolute -top-2 -left-2 text-3xl sm:text-4xl text-[var(--text-hover)] font-serif">"</span>
               
               {/* Quote text */}
-              <div className="font-newsreader text-base md:text-lg leading-relaxed italic font-light">
+              <div className="font-newsreader text-sm sm:text-base md:text-lg leading-relaxed italic font-light">
                 {isMultipleQuotes ? (
-                  <ul toc-marker={allQuotes[0]} className="list-disc pl-4 space-y-2">
+                  <ul toc-marker={allQuotes[0]} className="list-disc pl-4 space-y-1 sm:space-y-2">
                     {allQuotes.map((q, i) => (
                       <li key={i}>{q}</li>
                     ))}
@@ -38,7 +38,7 @@ export default function QuotePost({ quote, quotes: propQuotes, author, source, d
             </blockquote>
           </div>
 
-          <div className="flex items-center gap-4 text-xs text-gray-500">
+          <div className="flex flex-col sm:flex-row items-start sm:items-center gap-2 sm:gap-4 text-xs text-gray-500">
             {authorLink ? (
               <a href={authorLink} className="hover:text-[--hover-foreground] transition-colors">{author}</a>
             ) : (
@@ -51,7 +51,7 @@ export default function QuotePost({ quote, quotes: propQuotes, author, source, d
         {/* Source attribution */}
         {source && (
           <div className="flex justify-end">
-            <span className="text-sm text-gray-500">{source}</span>
+            <span className="text-xs sm:text-sm text-gray-500">{source}</span>
           </div>
         )}
       </div>

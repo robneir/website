@@ -85,72 +85,82 @@ export default function HomePage() {
 
         <div className="flex-1">
           <H2 id="featured">Featured</H2>
-          <EssayPost {...newestEssay} />
+          <div className="max-w-full overflow-hidden">
+            <EssayPost {...newestEssay} />
+          </div>
 
           <div className="py-8">
             <H2 id="newest">Newest</H2>
-            {newestItem.type === 'video' && (
-              <VideoPost 
-                title={newestItem.title}
-                description={newestItem.description}
-                videoUrl={newestItem.videoUrl}
-                duration={newestItem.duration}
-                platform={newestItem.platform}
-                date={newestItem.date}
-              />
-            )}
-            {newestItem.type === 'essay' && (
-              <EssayPost 
-                title={newestItem.title}
-                url={newestItem.url}
-                date={newestItem.date}
-                author={newestItem.author}
-                authorLink={newestItem.authorLink}
-              />
-            )}
-            {newestItem.type === 'quote' && (
-              <QuotePost
-                quote={newestItem.quotes || newestItem.quote || ''}
-                author={newestItem.author}
-                source={newestItem.source}
-                date={newestItem.date}
-              />
-            )}
+            <div className="max-w-full overflow-hidden">
+              {newestItem.type === 'video' && (
+                <VideoPost 
+                  title={newestItem.title}
+                  description={newestItem.description}
+                  videoUrl={newestItem.videoUrl}
+                  duration={newestItem.duration}
+                  platform={newestItem.platform}
+                  date={newestItem.date}
+                />
+              )}
+              {newestItem.type === 'essay' && (
+                <EssayPost 
+                  title={newestItem.title}
+                  url={newestItem.url}
+                  date={newestItem.date}
+                  author={newestItem.author}
+                  authorLink={newestItem.authorLink}
+                />
+              )}
+              {newestItem.type === 'quote' && (
+                <QuotePost
+                  quote={newestItem.quotes || newestItem.quote || ''}
+                  author={newestItem.author}
+                  source={newestItem.source}
+                  date={newestItem.date}
+                />
+              )}
+            </div>
           </div>
 
           <div className="py-8">
             <H2 id="all-essays">Newest Writing</H2>
-            {sortedEssays.slice(0, 3).map((essay) => (
-              <EssayPost key={essay.url} {...essay} />
-            ))}
+            <div className="max-w-full overflow-hidden">
+              {sortedEssays.slice(0, 3).map((essay) => (
+                <EssayPost key={essay.url} {...essay} />
+              ))}
+            </div>
           </div>
           
           <div className="py-8">
             <H2 id="videos">Newest Videos</H2>
-            {videos.slice(0, 3).map((video) => (
-              <VideoPost 
-                key={video.videoUrl}
-                title={video.title}
-                description={video.description}
-                videoUrl={video.videoUrl}
-                duration={video.duration}
-                platform={video.platform as 'youtube' | 'vimeo' | 'other'}
-                date={video.date}
-              />
-            ))}
+            <div className="max-w-full overflow-hidden">
+              {videos.slice(0, 3).map((video) => (
+                <VideoPost 
+                  key={video.videoUrl}
+                  title={video.title}
+                  description={video.description}
+                  videoUrl={video.videoUrl}
+                  duration={video.duration}
+                  platform={video.platform as 'youtube' | 'vimeo' | 'other'}
+                  date={video.date}
+                />
+              ))}
+            </div>
           </div>
 
           <div className="py-8">
             <H2 id="quotes">Newest Quotes</H2>
-            {quotes.slice(0, 3).map((quoteItem, index) => (
-              <QuotePost 
-                key={index}
-                quote={quoteItem.quotes || quoteItem.quote || ''} 
-                author={quoteItem.author}
-                source={quoteItem.source || ''}
-                date={quoteItem.date}
-              />
-            ))}
+            <div className="max-w-full overflow-hidden">
+              {quotes.slice(0, 3).map((quoteItem, index) => (
+                <QuotePost 
+                  key={index}
+                  quote={quoteItem.quotes || quoteItem.quote || ''} 
+                  author={quoteItem.author}
+                  source={quoteItem.source || ''}
+                  date={quoteItem.date}
+                />
+              ))}
+            </div>
           </div>
         </div>
       </div>
