@@ -33,7 +33,7 @@ export default function VideoPost({ title, description, videoUrl, duration, plat
           </span>
         </TTLink>
       </div>
-      <div className="flex items-center gap-4 text-xs text-gray-500 mt-2 md:mt-0 flex-shrink-0">
+      <div className="flex items-center gap-4 text-xs text-gray-500 mt-2 md:mt-0 flex-shrink-0 self-end md:self-auto">
         <span>{duration}</span>
         <span>{date}</span>
       </div>

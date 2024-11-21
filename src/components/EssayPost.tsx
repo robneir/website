@@ -41,7 +41,7 @@ export default function EssayPost({ title, url, date, author, authorLink }: Essa
           </span>
         </TTLink>
       </div>
-      <div className="flex items-center gap-4 text-xs text-gray-500 mt-2 sm:mt-0 flex-shrink-0">
+      <div className="flex items-center gap-4 text-xs text-gray-500 mt-2 sm:mt-0 flex-shrink-0 self-end sm:self-auto">
         {authorLink ? (
           <a href={authorLink} className="hover:text-[--hover-foreground] transition-colors">{author}</a>
         ) : (
