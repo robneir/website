@@ -4,7 +4,7 @@ import PageHeader from '@/components/PageHeader'
 import TableOfContents from '@/components/TableOfContents'
 
 export const metadata = {
-  title: 'Writing | Your Name',
+  title: 'Writing | neir.me',
   description: 'Essays and articles about technology, programming, and more.',
 }
 
