@@ -9,6 +9,14 @@ export interface Essay {
 
 export const essays: Essay[] = [
   {
+    title: "Beware The Man Of One Study",
+    url: "https://slatestarcodex.com/2014/12/12/beware-the-man-of-one-study/",
+    date: "12/12/2014",
+    author: "Scott Alexander",
+    authorLink: "https://slatestarcodex.com",
+    featured: true
+  },
+  {
     title: "Argument Screens Off Authority",
     url: "https://www.lesswrong.com/posts/5yFRd3cjLpm3Nd6Di/argument-screens-off-authority",
     date: "11/21/2024",
@@ -70,7 +78,7 @@ export const essays: Essay[] = [
     date: "11/16/2024",
     author: "Try the Game Here",
     authorLink: "https://www.decart.ai/",
-    featured: true
+    featured: false
   },
   {
     title: "The DOGE Plan to Reform Government",
@@ -78,6 +86,14 @@ export const essays: Essay[] = [
     date: "11/23/2024",
     author: "Elon Musk & Vivek Ramaswamy",
     authorLink: "https://www.wsj.com",
+    featured: false
+  },
+  {
+    title: "The Spacing Effect",
+    url: "https://en.wikipedia.org/wiki/Spacing_effect",
+    date: "11/24/2024",
+    author: "Wikipedia",
+    authorLink: "https://wikipedia.org",
     featured: false
   }
 ];

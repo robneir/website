@@ -19,22 +19,22 @@ export default function QuotePost({ quote, author, source, sourceLink, date, aut
           )}
         </div>
       </div>
-      <div className="flex items-center gap-4 text-xs text-gray-500 mt-2 sm:mt-0 flex-shrink-0 self-end sm:self-auto">
+      <div className="flex flex-wrap items-center gap-4 text-xs text-gray-500 mt-2 sm:mt-0 flex-shrink-0 self-end sm:self-auto max-w-[200px] justify-end">
         {author && (
           <>
             {authorLink ? (
-              <a href={authorLink} className="hover:text-[--hover-foreground] transition-colors">{author}</a>
+              <a href={authorLink} className="hover:text-[--hover-foreground] transition-colors text-right">{author}</a>
             ) : (
-              <span>{author}</span>
+              <span className="text-right">{author}</span>
             )}
           </>
         )}
         {source && (
           <>
             {sourceLink ? (
-              <a href={sourceLink} className="hover:text-[--hover-foreground] transition-colors">{source}</a>
+              <a href={sourceLink} className="hover:text-[--hover-foreground] transition-colors text-right">{source}</a>
             ) : (
-              <span>{source}</span>
+              <span className="text-right">{source}</span>
             )}
           </>
         )}
