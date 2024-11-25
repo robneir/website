@@ -10,6 +10,15 @@ export interface Video {
 
 export const dataAdded: Video[] = [
   {
+    title: "Breaking Down DOGE, Milei's Impact, WW3 Risk & Science Corner",
+    description: "Full episode covering: Breaking down the Department of Government Efficiency (DOGE) roadmap, Milei's impact, DOGE's tight timeline, impact on GDP growth, 'default sustainable,' how to communicate DOGE, WW3 risk with Biden's recent escalation, and Science Corner discussing how fat cells can remember being fat.",
+    videoUrl: "https://www.youtube.com/watch?v=pnmDeIgW3EQ",
+    duration: "1:00:43",
+    platform: "youtube",
+    date: "11/23/2024",
+    featured: false
+  },
+  {
     title: "The Ben & Marc Show: Las Vegas Metro Police on Building America's Safest City",
     description: "A16z co-founders Marc Andreessen and Ben Horowitz discuss with LVMPD Chief Mike Gennaro and Sheriff Kevin McMahill how they're using technology to make Las Vegas the safest city in America. They explore modern policing challenges, innovative programs like Hope for Prisoners, and how new technologies like drones and AI are transforming public safety.",
     videoUrl: "https://www.youtube.com/watch?v=vNW6p98SFsw",

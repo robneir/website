@@ -1,6 +1,7 @@
 import { essays } from '@/data/essays'
 import EssayPost from '@/components/EssayPost'
 import PageHeader from '@/components/PageHeader'
+import H2 from '@/components/H2'
 
 export const metadata = {
   title: 'Writing | neir.me',
@@ -14,6 +15,9 @@ export default function WritingPage() {
     return dateB.localeCompare(dateA)
   })
 
+  const myWriting = sortedEssays.filter(essay => essay.author === "Neir Miss")
+  const favoriteWriting = sortedEssays.filter(essay => essay.author !== "Neir Miss")
+
   return (
     <main className="flex-1 py-6">
       <PageHeader
@@ -22,9 +26,17 @@ export default function WritingPage() {
       />
 
       <div className="flex-1">
-        {sortedEssays.map((essay) => (
+        <H2 id="my-writing">My Own</H2>
+        {myWriting.map((essay) => (
           <EssayPost key={essay.url} {...essay} />
         ))}
+
+        <div className="py-8">
+          <H2 id="favorite-writing">My Favorite</H2>
+          {favoriteWriting.map((essay) => (
+            <EssayPost key={essay.url} {...essay} />
+          ))}
+        </div>
       </div>
     </main>
   )
