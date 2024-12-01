@@ -37,7 +37,7 @@ export default function NavBar() {
               X ↗
             </Link>
             <Link href="https://riotiq.com/" className="text-lg hover:text-gray-600 transition-colors flex items-center gap-1">
-              Current Project {'—'}{'>'} Riot IQ  ↗
+              <i>Current Project {'—'}{'>'} Riot IQ</i> ↗
             </Link>
           </div>
         </div>
@@ -92,7 +92,7 @@ export default function NavBar() {
                 <span className="text-sm">↗</span>
               </Link>
               <Link href="https://riotiq.com/" className="hover:text-gray-600 transition-colors flex items-center gap-1">
-                Current Project {'—'}{'>'} Riot IQ
+                <i>Current Project {'—'}{'>'} Riot IQ</i>
                 <span className="text-sm">↗</span>
               </Link>
             </div>
