@@ -13,7 +13,7 @@ import { books } from '@/data/books' // Added import for books data
 
 export const metadata = {
   title: 'neir.me',
-  description: 'Select high quality videos, essays, articles, and rhetoric online. Topics: Tech, economics, politics, USA, investing, VC, startups, entrepreneurship.',
+  description: 'Select high quality videos, essays, articles, and rhetoric online. Topics: Tech, economics, politics, USA, investing, VC, startups, entrepreneurship, philosophy, human & artificial intelligence.',
 }
 
 export default function HomePage() {
@@ -48,8 +48,8 @@ export default function HomePage() {
   return (
     <main className="flex-1 py-6">
       <PageHeader 
-        title="Curated Links"
-        description="Select high quality videos, essays, articles, and rhetoric online. Topics: Tech, economics, politics, USA, investing, VC, startups, entrepreneurship."
+        title="About"
+        description="I am Robert. One of the founders of Riot IQ, a cognitive testing software. I have a background in computer science, entrepreneurship, video game development, blockchain, and web development; interests in technology, economics, politics, philosophy, human & artificial intelligence. This website is a curation of links to information I find useful, intersting, valuable."
       />
 
       <div className="flex-1">

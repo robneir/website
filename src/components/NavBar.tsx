@@ -22,7 +22,7 @@ export default function NavBar() {
 
           <div className="flex items-center justify-center gap-6 mt-2">
             <Link href="/" className="text-lg hover:text-gray-600 transition-colors">
-              — Curated Links —
+              — About —
             </Link>
             <Link href="/alllinks" className="text-lg hover:text-gray-600 transition-colors">
               — All Links —
@@ -37,7 +37,7 @@ export default function NavBar() {
               X ↗
             </Link>
             <Link href="https://riotiq.com/" className="text-lg hover:text-gray-600 transition-colors flex items-center gap-1">
-              Riot IQ ↗
+              Current Project {'—'}{'>'} Riot IQ  ↗
             </Link>
           </div>
         </div>
@@ -76,7 +76,7 @@ export default function NavBar() {
           <div className="lg:hidden px-4 py-2 border-t border-gray-200 dark:border-gray-700">
             <div className="flex flex-col gap-4">
               <Link href="/" className="text-lg hover:text-gray-600 transition-colors">
-                Curated Links
+                About
               </Link>
               <Link href="/alllinks" className="text-lg hover:text-gray-600 transition-colors">
                 All Links
@@ -86,14 +86,13 @@ export default function NavBar() {
               </Link>
               <Link href="/books" className="hover:text-gray-600 transition-colors flex items-center gap-1">
                 Books
-                <span className="text-sm">↗</span>
               </Link>
               <Link href="https://x.com/neir_rob" target="_blank" rel="noopener noreferrer" className="hover:text-gray-600 transition-colors flex items-center gap-1">
                 X
                 <span className="text-sm">↗</span>
               </Link>
               <Link href="https://riotiq.com/" className="hover:text-gray-600 transition-colors flex items-center gap-1">
-                Riot IQ
+                Current Project {'—'}{'>'} Riot IQ
                 <span className="text-sm">↗</span>
               </Link>
             </div>
