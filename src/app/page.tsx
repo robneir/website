@@ -49,7 +49,7 @@ export default function HomePage() {
     <main className="flex-1 py-6">
       <PageHeader 
         title="About"
-        description="I am Robert. One of the founders of Riot IQ, a cognitive testing software. I have a background in computer science, entrepreneurship, video game development, blockchain, and web development; interests in technology, economics, politics, philosophy, human & artificial intelligence. This website is a curation of links to information I find useful, intersting, valuable."
+        description="I am Robert. One of the founders of Riot IQ, a cognitive testing software. I have a background in computer science, entrepreneurship, video game development, blockchain, and web development; interests in technology, economics, politics, philosophy, human & artificial intelligence. This website is a curation of links to information I find useful, interesting, valuable."
       />
 
       <div className="flex-1">
