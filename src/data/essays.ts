@@ -95,5 +95,21 @@ export const essays: Essay[] = [
     author: "Wikipedia",
     authorLink: "https://wikipedia.org",
     featured: false
+  },
+  {
+    title: "Consuming Information ≠ Learning",
+    url: "https://www.sambrinson.com/consuming-information/",
+    date: "11/24/2024",
+    author: "Sam Brinson",
+    authorLink: "https://www.sambrinson.com",
+    featured: false
+  },
+  {
+    title: "The Triumph of Electromagnetism Over Nuclear Force",
+    url: "https://www.noahpinion.blog/p/the-triumph-of-electromagnetism-over",
+    date: "03/17/2024",
+    author: "Noah Smith",
+    authorLink: "https://www.noahpinion.blog",
+    featured: false
   }
 ];

@@ -8,6 +8,8 @@ import H2 from '@/components/H2'
 import PageHeader from '@/components/PageHeader'
 import { Essay } from '@/data/essays'
 import { Quote } from '@/data/quotes'
+import BookPost from '@/components/BookPost' // Added import for BookPost
+import { books } from '@/data/books' // Added import for books data
 
 export const metadata = {
   title: 'neir.me',
@@ -106,6 +108,13 @@ export default function HomePage() {
               {...video}
               platform={video.platform as 'youtube' | 'vimeo' | 'other'}
             />
+          ))}
+        </div>
+
+        <div className="py-8">
+          <H2 id="books">Books</H2>
+          {books.slice(0, 3).map((book) => (
+            <BookPost key={book.url} {...book} />
           ))}
         </div>
 

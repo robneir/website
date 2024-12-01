@@ -30,6 +30,9 @@ export default function NavBar() {
             <Link href="/writing" className="text-lg hover:text-gray-600 transition-colors">
               — Writing —
             </Link>
+            <Link href="/books" className="text-lg hover:text-gray-600 transition-colors flex items-center gap-1">
+              — Books —
+            </Link>
             <Link href="https://x.com/neir_rob" target="_blank" rel="noopener noreferrer" className="text-lg hover:text-gray-600 transition-colors flex items-center gap-1">
               X ↗
             </Link>
@@ -80,6 +83,10 @@ export default function NavBar() {
               </Link>
               <Link href="/writing" className="text-lg hover:text-gray-600 transition-colors">
                 Writing
+              </Link>
+              <Link href="/books" className="hover:text-gray-600 transition-colors flex items-center gap-1">
+                Books
+                <span className="text-sm">↗</span>
               </Link>
               <Link href="https://x.com/neir_rob" target="_blank" rel="noopener noreferrer" className="hover:text-gray-600 transition-colors flex items-center gap-1">
                 X

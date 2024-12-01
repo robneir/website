@@ -10,6 +10,15 @@ export interface Video {
 
 export const dataAdded: Video[] = [
   {
+    title: "The Death Of The Personal Brand (& The Future Of Creative Work)",
+    description: "Dan Koe explores how the creator economy has evolved from a path to freedom into potential constraint. He discusses how to stand out authentically, pursue meaningful work, and find fulfillment while building an audience. Topics include the evolution of personal brands, the role of education in marketing, and creating systems-based products.",
+    videoUrl: "https://www.youtube.com/watch?v=RPVxwzJtp4o",
+    duration: "33:42",
+    platform: "youtube",
+    date: "11/25/2024",
+    featured: false
+  },
+  {
     title: "Breaking Down DOGE, Milei's Impact, WW3 Risk & Science Corner",
     description: "Full episode covering: Breaking down the Department of Government Efficiency (DOGE) roadmap, Milei's impact, DOGE's tight timeline, impact on GDP growth, 'default sustainable,' how to communicate DOGE, WW3 risk with Biden's recent escalation, and Science Corner discussing how fat cells can remember being fat.",
     videoUrl: "https://www.youtube.com/watch?v=pnmDeIgW3EQ",
