@@ -3,7 +3,7 @@
 import TTLink from './TTLink'
 import {Video } from '../data/videos'
 
-export default function VideoPost({ title, description, videoUrl, duration, platform, date }: Video) {
+export default function VideoPost({ title, description, videoUrl, duration, platform, date, isExternal }: Video) {
   return (
     <div className="p-4 text-foreground flex flex-col md:flex-row items-start md:items-center justify-between w-full gap-4">
       <div className="flex items-center gap-2 flex-1 group">
@@ -24,6 +24,7 @@ export default function VideoPost({ title, description, videoUrl, duration, plat
             {title}
           </span>
         </TTLink>
+        {isExternal && <span className="text-sm ml-2">↗</span>}
       </div>
       <div className="flex items-center gap-4 text-xs text-gray-500 mt-2 md:mt-0 flex-shrink-0 self-end md:self-auto">
         <span>{duration}</span>

@@ -6,6 +6,7 @@ export interface Book {
   authorLink: string;
   description: string;
   featured: boolean;
+  isExternal: boolean;
 }
 
 export const books: Book[] = [
@@ -16,7 +17,8 @@ export const books: Book[] = [
     author: "Miyamoto Musashi",
     authorLink: "https://en.wikipedia.org/wiki/Miyamoto_Musashi",
     description: "A treatise on strategy, tactics, and philosophy written by the Japanese ronin and samurai Miyamoto Musashi.",
-    featured: true
+    featured: true,
+    isExternal: true
   },
   {
     title: "The Sovereign Individual",
@@ -25,7 +27,8 @@ export const books: Book[] = [
     author: "James Dale Davidson, William Rees-Mogg",
     authorLink: "https://en.wikipedia.org/wiki/James_Dale_Davidson",
     description: "A book that explores the implications of the Information Age on politics, economics, and society.",
-    featured: false
+    featured: false,
+    isExternal: true
   },
   {
     title: "The Almanack of Naval Ravikant",
@@ -34,6 +37,7 @@ export const books: Book[] = [
     author: "Naval Ravikant",
     authorLink: "https://en.wikipedia.org/wiki/Naval_Ravikant",
     description: "A collection of wisdom and insights from Naval Ravikant, a successful entrepreneur and investor.",
-    featured: true
+    featured: true,
+    isExternal: true
   }
 ];

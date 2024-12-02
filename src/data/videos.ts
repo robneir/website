@@ -6,6 +6,7 @@ export interface Video {
   platform: 'youtube' | 'vimeo' | 'other';
   date: string;
   featured: boolean;
+  isExternal: boolean;
 }
 
 export const dataAdded: Video[] = [
@@ -16,7 +17,8 @@ export const dataAdded: Video[] = [
     duration: "33:42",
     platform: "youtube",
     date: "11/25/2024",
-    featured: false
+    featured: false,
+    isExternal: true
   },
   {
     title: "Breaking Down DOGE, Milei's Impact, WW3 Risk & Science Corner",
@@ -25,7 +27,8 @@ export const dataAdded: Video[] = [
     duration: "1:00:43",
     platform: "youtube",
     date: "11/23/2024",
-    featured: false
+    featured: false,
+    isExternal: true
   },
   {
     title: "The Ben & Marc Show: Las Vegas Metro Police on Building America's Safest City",
@@ -34,7 +37,8 @@ export const dataAdded: Video[] = [
     duration: "1:14:37",
     platform: "youtube",
     date: "11/18/2024",
-    featured: false
+    featured: false,
+    isExternal: true
   },
   {
     title: "Peter Thiel: Trump 2.0, Counter-Elites, and World War III",
@@ -43,7 +47,8 @@ export const dataAdded: Video[] = [
     duration: "1:23:12", // Note: Using placeholder duration since actual wasn't provided
     platform: "youtube",
     date: "11/14/2024",
-    featured: false
+    featured: false,
+    isExternal: true
   },
   {
     title: "Brian Chesky on Airbnb's Future and His Contrarian Management Style",
@@ -52,7 +57,8 @@ export const dataAdded: Video[] = [
     duration: "1:23:12",
     platform: "youtube", 
     date: "11/10/2024",
-    featured: false
+    featured: false,
+    isExternal: true
   },
   {
     title: "Gwern: AGI Timelines, Intelligence, and Anonymity",
@@ -61,7 +67,8 @@ export const dataAdded: Video[] = [
     duration: "1:37:42", 
     platform: "youtube",
     date: "11/13/2024",
-    featured: false
+    featured: false,
+    isExternal: true
   },
   {
     title: "Brian Chesky: Loneliness, Leadership & Building Airbnb",
@@ -70,7 +77,8 @@ export const dataAdded: Video[] = [
     duration: "1:33:38",
     platform: "youtube", 
     date: "10/09/2023",
-    featured: false
+    featured: false,
+    isExternal: true
   },
   {
     title: "Youtube Playlist - Crash Courses on U.S. Government and Politics",
@@ -79,6 +87,7 @@ export const dataAdded: Video[] = [
     duration: "50 videos",
     platform: "youtube",
     date: "11/20/2024",
-    featured: false
+    featured: false,
+    isExternal: true
   }
 ]

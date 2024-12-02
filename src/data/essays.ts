@@ -5,6 +5,7 @@ export interface Essay {
   author: string;
   authorLink: string;
   featured: boolean;
+  isExternal: boolean;
 }
 
 export const essays: Essay[] = [
@@ -14,7 +15,8 @@ export const essays: Essay[] = [
     date: "12/12/2014",
     author: "Scott Alexander",
     authorLink: "https://slatestarcodex.com",
-    featured: true
+    featured: true,
+    isExternal: true
   },
   {
     title: "Argument Screens Off Authority",
@@ -22,7 +24,8 @@ export const essays: Essay[] = [
     date: "11/21/2024",
     author: "Eliezer Yudkowsky",
     authorLink: "https://www.lesswrong.com/users/eliezer_yudkowsky",
-    featured: true
+    featured: true,
+    isExternal: true
   },
   {
     title: "Action derivatives: You're not doing what you think you're doing",
@@ -30,7 +33,8 @@ export const essays: Essay[] = [
     date: "11/21/2024",
     author: "PatrickDFarley",
     authorLink: "https://www.lesswrong.com/users/patrickdfarley",
-    featured: false
+    featured: false,
+    isExternal: true
   },
   {
     title: "Studying IQ Matters",
@@ -38,7 +42,8 @@ export const essays: Essay[] = [
     date: "07/10/2024",
     author: "Neir Miss",
     authorLink: "https://www.neirmiss.com",
-    featured: true
+    featured: true,
+    isExternal: true
   },
   {
     title: "Significantly Enhancing Adult Intelligence With Gene Editing May Be Possible",
@@ -46,7 +51,8 @@ export const essays: Essay[] = [
     date: "12/12/2023",
     author: "GeneSmith, kman",
     authorLink: "https://www.lesswrong.com/users/genesmith?from=post_header",
-    featured: false
+    featured: false,
+    isExternal: true
   },
   {
     title: "On how to be a creative person with a job",
@@ -54,7 +60,8 @@ export const essays: Essay[] = [
     date: "11/27/2018",
     author: "The Creative Independent",
     authorLink: "https://thecreativeindependent.com",
-    featured: false
+    featured: false,
+    isExternal: true
   },
   {
     title: "How to do things if you're not that smart and don't have any talent",
@@ -62,7 +69,8 @@ export const essays: Essay[] = [
     date: "01/28/2024",
     author: "Adaobi",
     authorLink: "https://adaobi.substack.com",
-    featured: false
+    featured: false,
+    isExternal: true
   },
   {
     title: "Why We Don't Trust Each Other Anymore",
@@ -70,7 +78,8 @@ export const essays: Essay[] = [
     date: "02/26/2024",
     author: "Epsilon Theory",
     authorLink: "https://www.epsilontheory.com",
-    featured: false
+    featured: false,
+    isExternal: true
   },
   {
     title: "The first AI (no game engine) Video Game Ever",
@@ -78,7 +87,8 @@ export const essays: Essay[] = [
     date: "11/16/2024",
     author: "Try the Game Here",
     authorLink: "https://www.decart.ai/",
-    featured: false
+    featured: false,
+    isExternal: true
   },
   {
     title: "The DOGE Plan to Reform Government",
@@ -86,7 +96,8 @@ export const essays: Essay[] = [
     date: "11/23/2024",
     author: "Elon Musk & Vivek Ramaswamy",
     authorLink: "https://www.wsj.com",
-    featured: false
+    featured: false,
+    isExternal: true
   },
   {
     title: "The Spacing Effect",
@@ -94,7 +105,8 @@ export const essays: Essay[] = [
     date: "11/24/2024",
     author: "Wikipedia",
     authorLink: "https://wikipedia.org",
-    featured: false
+    featured: false,
+    isExternal: true
   },
   {
     title: "Consuming Information ≠ Learning",
@@ -102,7 +114,8 @@ export const essays: Essay[] = [
     date: "11/24/2024",
     author: "Sam Brinson",
     authorLink: "https://www.sambrinson.com",
-    featured: false
+    featured: false,
+    isExternal: true
   },
   {
     title: "The Triumph of Electromagnetism Over Nuclear Force",
@@ -110,6 +123,7 @@ export const essays: Essay[] = [
     date: "03/17/2024",
     author: "Noah Smith",
     authorLink: "https://www.noahpinion.blog",
-    featured: false
+    featured: false,
+    isExternal: true
   }
 ];
