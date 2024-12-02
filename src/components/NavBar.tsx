@@ -76,26 +76,25 @@ export default function NavBar() {
         {isMenuOpen && (
           <div className="lg:hidden px-4 py-2 border-t border-gray-200 dark:border-gray-700">
             <div className="flex flex-col gap-4">
-              <Link href="/" className="text-lg hover:text-gray-600 transition-colors">
+              <Link href="/" onClick={() => setIsMenuOpen(false)} className="text-lg hover:text-gray-600 transition-colors">
                 About
               </Link>
-              <Link href="/alllinks" className="text-lg hover:text-gray-600 transition-colors">
+              <Link href="/alllinks" onClick={() => setIsMenuOpen(false)} className="text-lg hover:text-gray-600 transition-colors">
                 All Links
               </Link>
-              <Link href="/writing" className="text-lg hover:text-gray-600 transition-colors">
+              <Link href="/writing" onClick={() => setIsMenuOpen(false)} className="text-lg hover:text-gray-600 transition-colors">
                 Writing
               </Link>
-              <Link href="/books" className="hover:text-gray-600 transition-colors flex items-center gap-1">
+              <Link href="/books" onClick={() => setIsMenuOpen(false)} className="text-lg hover:text-gray-600 transition-colors">
                 Books
               </Link>
-              <span>|</span>
-              <Link href="https://x.com/neir_rob" target="_blank" rel="noopener noreferrer" className="hover:text-gray-600 transition-colors flex items-center gap-1">
+              <Link href="https://x.com/neir_rob" target="_blank" rel="noopener noreferrer" onClick={() => setIsMenuOpen(false)} className="text-lg hover:text-gray-600 transition-colors flex items-center gap-1">
                 X
-                <span className="text-sm">↗</span>
+                <span className="text-lg">↗</span>
               </Link>
-              <Link href="https://riotiq.com/" className="hover:text-gray-600 transition-colors flex items-center gap-1">
+              <Link href="https://riotiq.com/" onClick={() => setIsMenuOpen(false)} className="text-lg hover:text-gray-600 transition-colors flex items-center gap-1">
                 <i>Current Project {'—'}{'>'} Riot IQ</i>
-                <span className="text-sm">↗</span>
+                <span className="text-lg">↗</span>
               </Link>
             </div>
           </div>
