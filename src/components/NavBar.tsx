@@ -33,11 +33,12 @@ export default function NavBar() {
             <Link href="/books" className="text-lg hover:text-gray-600 transition-colors flex items-center gap-1">
               — Books —
             </Link>
+            <span>|</span>
             <Link href="https://x.com/neir_rob" target="_blank" rel="noopener noreferrer" className="text-lg hover:text-gray-600 transition-colors flex items-center gap-1">
               X ↗
             </Link>
             <Link href="https://riotiq.com/" className="text-lg hover:text-gray-600 transition-colors flex items-center gap-1">
-              <i>Current Project {'—'}{'>'} Riot IQ</i> ↗
+              <i>Current Project {'='} Riot IQ</i> ↗
             </Link>
           </div>
         </div>
@@ -87,6 +88,7 @@ export default function NavBar() {
               <Link href="/books" className="hover:text-gray-600 transition-colors flex items-center gap-1">
                 Books
               </Link>
+              <span>|</span>
               <Link href="https://x.com/neir_rob" target="_blank" rel="noopener noreferrer" className="hover:text-gray-600 transition-colors flex items-center gap-1">
                 X
                 <span className="text-sm">↗</span>
