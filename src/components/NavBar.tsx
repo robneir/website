@@ -34,11 +34,14 @@ export default function NavBar() {
               — Books —
             </Link>
             <span>|</span>
-            <Link href="https://x.com/neir_rob" target="_blank" rel="noopener noreferrer" className="text-lg hover:text-gray-600 transition-colors flex items-center gap-1">
+            <Link href="https://x.com/neir_rob" target="_blank" rel="noopener noreferrer" className="text-lg hover:text-gray-600 transition-colors flex items-center gap-1 font-mono">
               X ↗
             </Link>
-            <Link href="https://riotiq.com/" className="text-lg hover:text-gray-600 transition-colors flex items-center gap-1">
-              <i>Current Project {'='} Riot IQ</i> ↗
+            <Link href="https://riotiq.com/" className="text-lg hover:text-gray-600 transition-colors flex items-center gap-1 font-mono">
+              Current Project ↗
+            </Link>
+            <Link href="https://github.com/robneir" target="_blank" rel="noopener noreferrer" className="text-lg hover:text-gray-600 transition-colors flex items-center gap-1 font-mono">
+              Github ↗
             </Link>
           </div>
         </div>
@@ -88,13 +91,15 @@ export default function NavBar() {
               <Link href="/books" onClick={() => setIsMenuOpen(false)} className="text-lg hover:text-gray-600 transition-colors">
                 Books
               </Link>
-              <Link href="https://x.com/neir_rob" target="_blank" rel="noopener noreferrer" onClick={() => setIsMenuOpen(false)} className="text-lg hover:text-gray-600 transition-colors flex items-center gap-1">
-                X
-                <span className="text-lg">↗</span>
+              <hr className="my-2 border-t border-dotted border-foreground w-full" /> {/* Updated to dotted line */}
+              <Link href="https://x.com/neir_rob" target="_blank" rel="noopener noreferrer" onClick={() => setIsMenuOpen(false)} className="text-lg hover:text-gray-600 transition-colors flex items-center gap-1 font-mono">
+                X ↗
               </Link>
-              <Link href="https://riotiq.com/" onClick={() => setIsMenuOpen(false)} className="text-lg hover:text-gray-600 transition-colors flex items-center gap-1">
-                <i>Current Project {'—'}{'>'} Riot IQ</i>
-                <span className="text-lg">↗</span>
+              <Link href="https://riotiq.com/" onClick={() => setIsMenuOpen(false)} className="text-lg hover:text-gray-600 transition-colors flex items-center gap-1 font-mono">
+                Current Project ↗
+              </Link>
+              <Link href="https://github.com/robneir" target="_blank" rel="noopener noreferrer" onClick={() => setIsMenuOpen(false)} className="text-lg hover:text-gray-600 transition-colors flex items-center gap-1 font-mono">
+                Github ↗
               </Link>
             </div>
           </div>
